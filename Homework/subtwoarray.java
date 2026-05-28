@@ -1,15 +1,23 @@
 import java.util.Scanner;
 
 public class subtwoarray {
-    public static int[] Innersubtwoarray(int[] arr1, int[] arr2) {
-
-        int n = arr1.length;
-        int[] res = new int[n];
-        for(int i =0;i<n;i++){
-            res[i] = arr1[i]-arr2[i];
+    public static int[] subtractArray(int[] arr1, int[] arr2) {
+    int[] result = new int[arr1.length];
+    int borrow = 0;
+    for (int i = arr1.length - 1; i >= 0; i--) {
+        int a = arr1[i] - borrow;
+        int b = arr2[i];
+        if (a < b) {
+            a = a + 10;
+            borrow = 1;
+        } else {
+            borrow = 0;
         }
-        return  res;
+        result[i] = a - b;
     }
+    return result;
+}
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
