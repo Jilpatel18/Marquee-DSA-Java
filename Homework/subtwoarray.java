@@ -30,7 +30,7 @@ public class subtwoarray {
         for(int i=0;i<n;i++){
             arr2[i]= sc.nextInt();
         }
-        res = Innersubtwoarray(arr1, arr2);
+        res = subtractArray(arr1, arr2);
         for(int i =0;i<n;i++){
             System.out.println(res[i]);
         }
